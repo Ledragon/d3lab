@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>D3 lab</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+
+<body ng-app="app">
+    <div class="container" ng-controller="ctrl as vm">
+        <div class="jumbotron">
+            <h1>D3 lab</h1> 
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <svg width="800" height="600">
+
+                </svg>
+            </div>
+
+            <div class="col-md-4">
+                <table class="table table-condensed">
+                    <tr>
+                        <th>name</th>
+                        <th>id</th>
+                        <th>parentId</th>
+                    </tr>
+                    <tr ng-repeat="node in vm.rawData">
+                        <td>{{node.name}}</td>
+                        <td> {{node.id}}</td>
+                        <td>{{node.parentId}}</td>
+                    </tr>
+                </table>
+                <button class="btn btn-sm" ng-click="vm.draw()">Draw</button>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="bower_components/lodash/lodash.min.js"></script>
+    <script src="app/app.js"></script>
+</body>
+
+</html>
