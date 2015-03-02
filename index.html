@@ -36,6 +36,11 @@
                 </table>
                 <button class="btn btn-sm" ng-click="vm.draw()">Draw</button>
             </div>
+            <div class="col-md-2">
+                <div ng-repeat="h in vm.hierarchy" ng-style="vm.getStyle(h)">
+                    {{h.name}}
+                </div>
+            </div>
         </div>
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>

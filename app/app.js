@@ -7,6 +7,13 @@
             var vm = this;
             vm.rawData = [];
             vm.draw = draw;
+            vm.getStyle = function (h) {
+                /*var style = '\'padding-left\': ' + (h.depth * 10) + 'px';*/
+                var style = {
+                    'padding-left': (h.depth * 10) + 'px'
+                };
+                return style;
+            };
 
             var rawData = vm.rawData;
             createData();
@@ -50,6 +57,7 @@
                 console.log('tree:');
                 console.log(tree);
                 var hierarchy = d3.layout.hierarchy()(tree);
+                vm.hierarchy = hierarchy;
                 /*var enterSelection = d3.select('svg').selectAll('.node')
                     .data(hierarchy)
                     .enter();
