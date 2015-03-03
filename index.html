@@ -15,31 +15,21 @@
             
         </div>
         <div class="row">
+            
+            <div class="col-md-2">
+                <table class="table table-condensed table-hover">
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                    <tr ng-repeat="h in vm.hierarchy">
+                        <td  ng-style="vm.getStyle(h)">{{h.name}}</td>
+                    </tr>
+                </table>
+            </div>
             <div class="col-md-6">
                 <svg width="800" height="600">
 
                 </svg>
-            </div>
-
-            <div class="col-md-4">
-                <table class="table table-condensed">
-                    <tr>
-                        <th>name</th>
-                        <th>id</th>
-                        <th>parentId</th>
-                    </tr>
-                    <tr ng-repeat="node in vm.rawData">
-                        <td>{{node.name}}</td>
-                        <td> {{node.id}}</td>
-                        <td>{{node.parentId}}</td>
-                    </tr>
-                </table>
-                <button class="btn btn-sm" ng-click="vm.draw()">Draw</button>
-            </div>
-            <div class="col-md-2">
-                <div ng-repeat="h in vm.hierarchy" ng-style="vm.getStyle(h)">
-                    {{h.name}}
-                </div>
             </div>
         </div>
     </div>

@@ -6,17 +6,18 @@
         app.controller('ctrl', [function () {
             var vm = this;
             vm.rawData = [];
-            vm.draw = draw;
             vm.getStyle = function (h) {
                 /*var style = '\'padding-left\': ' + (h.depth * 10) + 'px';*/
                 var style = {
-                    'padding-left': (h.depth * 10) + 'px'
+                    'padding-left': (h.depth * 15) + 'px',
+                    'color': h.name.indexOf('2') !== -1 ? 'red' : 'green'
                 };
                 return style;
             };
 
             var rawData = vm.rawData;
             createData();
+            draw();
 
             function createData() {
                 for (var i = 0; i < 5; i++) {
